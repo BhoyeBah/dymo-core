@@ -6,16 +6,31 @@ build-backend = "setuptools.build_meta"
 name = "dymo-saas-core"
 version = "0.1.0"
 description = "Dymo SaaS Core backend starter kit"
-readme = "TODO.md"
+readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
   "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "click>=8.1",
+  "sqlalchemy>=2.0",
+  "alembic>=1.13",
+  "pydantic-settings>=2.3",
   "pydantic>=2.7",
+  "email-validator>=2.2",
+  "psycopg2-binary>=2.9",
+  "PyJWT>=2.9",
+  "cryptography>=42.0",
+  "httpx>=0.27",
+  "stripe>=10.0",
+  "structlog>=24.1",
+  "python-dotenv>=1.0",
 ]
+
+[project.scripts]
+dymo-saas = "dymo_saas_core.cli:cli"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
